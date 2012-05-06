@@ -1,0 +1,9 @@
+{% extends "registration/base.html" %}
+{%load i18n humanize%}
+{% block page_title %}{%trans "Registration completed"%}{% endblock %}
+
+{% block form_title %}{%trans "Check your e-mail"%}{%endblock%}
+
+{%block form_details%}
+    {%trans "Thank you for registering. The registration link has been sent to the given e-mail address with the instructions how to activate your account."%}<BR/>       
+{%endblock%}

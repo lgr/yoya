@@ -1,0 +1,10 @@
+{%load i18n%}
+<DIV class="mark">
+    <DIV class="options">
+        <UL>
+            <LI><A class="vote plus" href="{%url publication_plus pub.id%}"><IMG{%if pub.voted_positively%} class="is_on"{%endif%} src="{{ STATIC_URL }}media/yes_{%if pub.voted_positively%}on{%else%}off{%endif%}.png" class="rollover" title="{%trans "I like it"%}"/></A></LI>
+            <LI><SPAN id="pub_{{pub.id}}" class="counter">{{pub.get_votes}}</SPAN></LI>
+            <LI><A class="vote" href="{%url publication_minus pub.id%}"><IMG{%if pub.voted_negatively%} class="is_on"{%endif%} src="{{ STATIC_URL }}media/no_{%if pub.voted_negatively%}on{%else%}off{%endif%}.png" class="rollover" title="{%trans "I don't like it, FUUUU!"%}"/></A></LI>
+        </UL>
+    </DIV>
+</DIV>

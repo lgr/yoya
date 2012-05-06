@@ -1,0 +1,109 @@
+{%extends "base.html"%}
+{%load i18n%}
+{% block page_title %}{%trans "Share something epic"%}{% endblock %}
+{%block extra_js_ready%}
+$("#type_select").tabs();
+$("input#id_file").change(function(){
+    if($(this).val() == '')
+        $("#type_select").tabs("enable", 1);
+    else{
+        $("#type_select").tabs("disable", 1);
+        $('.clean_selection').fadeIn();
+    }
+});
+$("input#id_url").change(function(){
+    if($(this).val() == '')
+        $("#type_select").tabs("enable", 0);
+    else{
+        $("#type_select").tabs("disable", 0);
+        $('.clean_selection').fadeIn();
+    }
+});
+$('.clean_selection').click(function(){
+    $("input#id_url").val('');
+    $("input#id_file").val('');
+    $("#type_select").tabs("option","disabled",[]);
+    $('.clean_selection').fadeOut().hide();
+});
+{%if form.data.url%}
+$("input#id_file").val('');
+$("#type_select").tabs("select",1);
+$("#type_select").tabs("disable",0);
+$('.clean_selection').fadeIn();
+{%endif%}
+{%if form.data.file%}
+$("input#id_url").val('');
+$("#type_select").tabs("select",0);
+$("#type_select").tabs("disable",1);
+$('.clean_selection').fadeIn();
+{%endif%}
+var p = $('<SPAN></SPAN>').addClass('errorlist').append('*');
+{%for field in form.visible_fields%}
+    {%if field.field.required%}$('label[for={{field.auto_id}}]').append($('<SPAN></SPAN>').addClass('errorlist').append('*'));{%endif%}{%endfor%}
+{%endblock%}
+{% block content %}
+<DIV class="pub rounded">
+    <DIV class="title">{%trans "Uploading a new publication"%}</DIV>
+    {%if not_allowed%}
+        <DIV class="details">{%blocktrans with number=not_allowed%}We are sorry, but we allow sending only up to {{number}} publications per day. Please wait until midnight.{%endblocktrans%}</DIV>
+    {%endif%}
+    {%if success%}
+        <DIV class="details">{%trans "Thank you, your publication is being processed. After the succesful acceptance, it is visible in the 'Waiting' section."%}</DIV>
+    {%endif%}
+    {%if form%}
+    <FORM name="addForm" method="POST" action=""  enctype="multipart/form-data">
+        <DIV class="form">
+            {% csrf_token %}
+            <TABLE>
+                <TR>
+                    <TD>{{ form.name.label_tag }}</TD>
+                    <TD>
+                        {% if form.name.errors %}<P class="errorlist">{{ form.name.errors.as_text }}</P>{%endif%}
+                        {{ form.name }}
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>{{ form.source.label_tag }}</TD>
+                    <TD>
+                        {% if form.source.errors %}<P class="errorlist">{{ form.source.errors.as_text }}</P>{%endif%}
+                        {{ form.source }}
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>{{ form.description.label_tag }}</TD>
+                    <TD>
+                        {% if form.description.errors %}<P class="errorlist">{{ form.description.errors.as_text }}</P>{%endif%}
+                        {{ form.description }}
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>{{ form.language.label_tag }}</TD>
+                    <TD style="text-align:left;">
+                        {% if form.language.errors %}<P class="errorlist">{{ form.language.errors.as_text }}</P>{%endif%}
+                        {{ form.language }}
+                    </TD>
+                </TR>
+            </TABLE>
+                <DIV class="visible-content">
+                    {{ form.non_field_errors }}
+                    <DIV id="type_select">
+                    <UL>
+                        <LI><a href="#is_file">{{form.file.label}}</a></li>
+                        <LI><a href="#is_url">{{form.url.label}}</a></li>
+                    </UL>
+                    <DIV id="is_file">
+                        {% if form.file.errors %}<P class="errorlist">{{ form.file.errors.as_text }}</P>{%endif%}
+                        <P><IMG src="{{ STATIC_URL }}media/del.png" id="clear" class="clean_selection"/>{{form.file}}</P>
+                    </DIV>
+                    <DIV id="is_url">
+                        {% if form.url.errors %}<P class="errorlist">{{ form.url.errors.as_text }}</P>{%endif%}
+                        <P><IMG src="{{ STATIC_URL }}media/del.png" id="clear" class="clean_selection"/>{{form.url}}</P>
+                    </DIV>
+                </DIV>
+                <A class="button" href="javascript:document.addForm.submit();">{%trans "Upload"%}</A>
+            </DIV>
+        </DIV>
+    </FORM>
+    {%endif%}
+</DIV>
+{%endblock%}

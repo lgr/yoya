@@ -1,0 +1,28 @@
+{%load i18n%}
+<DIV class="marked">{%trans "Tell your friend about this place!"%}<BR/><BR/></DIV>
+<FORM name="tellForm" id="tellForm" method="POST" action="{%url invite_friend%}" style="padding: 2px;">
+    <TABLE>
+        {% csrf_token %}
+        {{ form.path}}
+        <TR>
+            <TD>{{ form.invitee_email.label_tag }}</TD>
+            <TD>{% if form.invitee_email.errors %}<P class="errorlist">{{ form.invitee_email.errors.as_text }}</P>{%endif%}{{ form.invitee_email }}</TD>
+        </TR>
+        <TR>
+            <TD>{{ form.invitee_name.label_tag }}</TD>
+            <TD>{% if form.invitee_name.errors %}<P class="errorlist">{{ form.invitee_name.errors.as_text }}</P>{%endif%}{{ form.invitee_name }}</TD>
+        </TR>
+        {%if not sender_known%}
+        <TR>
+            <TD>{{ form.inviter_name.label_tag }}</TD>
+            <TD>{% if form.inviter_email.errors %}<P class="errorlist">{{ form.inviter_email.errors.as_text }}</P>{%endif%}{{ form.inviter_name }}</TD>
+        </TR>
+        {%endif%}
+        <TR>
+            <TD>&nbsp;</TD>
+            <TD class="visible-content">
+                <BR/><A class="button" id="tellFormSubmit" href="#">{%trans "Send"%}</A>
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>

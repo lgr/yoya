@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{%load i18n%}
+
+{% block page_title %}
+    {%if sites%}{%trans "Spider: All crawlable sites"%}{%else%}
+    {%trans "Spider"%}: {{source_site}}{%endif%}
+{% endblock %}
+
+{%block extra_meta%}
+<meta http-equiv="cache-control" content="no-cache" />
+{%endblock%}
+
+{%block extra_js_scripts%}
+<SCRIPT type="text/javascript" src="{{ STATIC_URL }}js/jquery.form.js"></SCRIPT>
+{%endblock%}
+
+{%block extra_js_ready%}
+var form_options = { target: 'pub#ee', url: '{%url spider_add%}' };
+$('a.submit').click(function(e){
+    e.preventDefault();
+    var id = $(this).attr('id');
+    form_options.target = '.pub#' + id;
+    $("form[name=spider_" + id + "]").ajaxSubmit(form_options);
+});
+{%endblock%}
+
+{% block content %}
+    {%if publications%}<DIV class="titlelike" style="margin-top:0">{{source_site}}: {{source_url}}</DIV>{%endif%}
+    {%for pub in publications%}
+        {%include "spider/candidate_content.html" with counter=forloop.counter%}     
+    {%endfor%}
+    
+    {%for site in sites%}
+    <DIV class="titlelike" style="margin-top:0">{{site.source_site}}: {{site.source_url}}</DIV>
+        {%for pub in site.publications%}
+            {%include "spider/candidate_content.html" with counter=pub.counter PROXY_URL=site.PROXY_URL source_site=site.source_site%}
+        {%endfor%}
+    {%endfor%}
+{% endblock %}

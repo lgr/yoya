@@ -1,0 +1,59 @@
+{% extends "registration/base.html" %}
+{%load i18n%}
+{% block page_title %}{%trans "Register"%}{% endblock %}
+
+{% block form_title %}{%trans "Create a new account"%}{%endblock%}
+
+{% block form_content %}
+<FORM name="registerForm" method="POST" action="{%url registration_register%}">
+    {% csrf_token %}
+    <TABLE>
+    {% if form.errors %}
+    <TR>
+        <TD colspan="2">
+            <P class="error">{%trans "The following data isn't correct"%}:</P>
+        </TD>
+    </TR>
+    {% endif %}
+    <TR>
+        <TD>{{ form.username.label_tag }}</TD>
+        <TD>{% if form.username.errors %}<P class="errorlist">{{ form.username.errors.as_text }}</P>{%endif%}
+            {{ form.username }}
+        </TD>
+        <TD rowspan="4" class="form-info">
+            <P>
+{%blocktrans%}
+Fill out the form to the left (all fields are required), and your account will be created; you'll be sent an email with instructions on how to finish your registration.
+
+We hate spam as much as you do, so we'll only use your email to send you signup instructions.
+{%endblocktrans%}
+            </P>
+        </TD>
+    </TR>
+    <TR>
+        <TD>{{ form.email.label_tag }}</TD>
+        <TD>{% if form.email.errors %}<P class="errorlist">{{ form.email.errors.as_text }}</P>{%endif%}
+            {{ form.email }}
+        </TD>
+    </TR>
+    <TR>
+        <TD><label for="id_password1">{%trans "Password"%}:</label></TD>
+        <TD>{% if form.password1.errors or form.non_field_errors %}<P class="errorlist">{{ form.password1.errors.as_text }}{{form.non_field_errors}}</P>{%endif%}
+            {{ form.password1 }}
+        </TD>
+    </TR>   
+    <TR>
+        <TD><label for="id_password2">{%trans "Verify password"%}:</label></TD>
+        <TD>{% if form.password2.errors %}<P class="errorlist">{{ form.password2.errors.as_text }}</P>{%endif%}
+            {{ form.password2 }}
+        </TD>
+    </TR>
+    <TR>
+        <TD>&nbsp;</TD>
+        <TD class="visible-content">
+            <A class="button" href="javascript:document.registerForm.submit();">{%trans "Register"%}</A>
+        </TD>
+    </TR>             
+    </TABLE>
+</FORM>
+{% endblock %}

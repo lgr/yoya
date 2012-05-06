@@ -1,0 +1,23 @@
+{% extends "registration/base.html" %}
+{%load i18n%}
+{% block page_title %}{%trans "Spider"%}{% endblock %}
+
+{% block form_title %}{%trans "Select the site"%}{%endblock%}
+
+{% block form_content %}
+<DIV class="details">
+    <A href="{%url spider_select "sadistic"%}"><IMG src="http://www.sadistic.pl/pics/logomaleczarne.png"></A>
+</DIV>
+<DIV class="details">
+    <A href="{%url spider_select "kwejk"%}"><IMG src="http://kwejk.pl/images/logo.png"></A>
+</DIV>
+<DIV class="details">
+    <A href="{%url spider_select "jebzdzidy"%}"><IMG src="http://jebzdzidy.pl/images/dzida_logo.png"></A>
+</DIV>
+<DIV class="details">
+    <A href="{%url spider_select "kecyroumen"%}">http://kecy.roumen.cz/ [?start=plik.jpg to start]</A>
+</DIV>
+<DIV class="details">
+    <A href="{%url spider_select_all%}">{%trans "ALL POSSIBLE SITES"%}</A>
+</DIV>
+{% endblock %}

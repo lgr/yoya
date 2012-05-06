@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /pub/random/
+Disallow: /pub/new/
+Allow: /

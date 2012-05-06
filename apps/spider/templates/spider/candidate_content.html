@@ -1,0 +1,21 @@
+{%load i18n%}
+<DIV class="pub rounded" id="{{counter}}">
+     <DIV class="title">{{pub.name}}</DIV>
+     <DIV class="item"><IMG src="{%if pub.proxy%}{{ PROXY_URL }}{{ pub.proxy }}{%else%}{{ pub.image }}{%endif%}"/></DIV>
+     <DIV class="form">
+         <FORM name="spider_{{counter}}" method="POST" action="">
+            {% csrf_token %}
+            <TABLE>
+            {{pub.form.as_table}}
+            {%if source_site == "Kwejk"%}<INPUT type='hidden' name='kwejk_crop' value='true'/>{%endif%}
+            {%if source_site == "9gag"%}<INPUT type='hidden' name='9gag_crop' value='true'/>{%endif%}
+            <TR>
+                <TH><LABEL>Should I add?</LABEL></TH>
+                <TD class="visible-content">
+                    <A class="button submit" href="#" id="{{counter}}">{%trans "OK"%}</A>
+                </TD>
+            </TR>
+            </TABLE>
+         </FORM>
+     </DIV>
+</DIV>

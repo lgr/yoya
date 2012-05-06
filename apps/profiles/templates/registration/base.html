@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+{%load i18n%}
+{% block page_title %}{% endblock %}
+{%block extra_js_ready%}
+    {%for field in form.visible_fields%}
+        var p = $('<SPAN></SPAN>').addClass('errorlist').append('*');
+        {%if field.field.required%}$('label[for={{field.auto_id}}]').append(p);{%endif%}
+    {%endfor%}
+{%endblock%}
+{% block content %}
+<DIV class="pub rounded">
+    <DIV class="title">{% block form_title %}{%endblock%}</DIV>
+    <DIV class="details">{%block form_details%}{%endblock%}</DIV>
+    <DIV class="form">{% block form_content %}{%endblock%}</DIV>
+</DIV>
+{%endblock%}
