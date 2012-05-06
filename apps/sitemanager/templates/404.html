@@ -1,0 +1,8 @@
+{% extends "registration/base.html" %}
+{%load i18n%}
+{% block page_title %}{%trans "404 | Web page doesn't exist"%}{% endblock %}
+{%block form_title%}{%trans "Ups, we are confused..."%}{%endblock%}
+{%block form_details%}
+{%trans "It looks like the Web page you're looking for:"%}<BR/>{{request_path}}</BR>
+{%trans "doesn't exist."%}
+{%endblock%}

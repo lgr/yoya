@@ -1,0 +1,42 @@
+[
+   {
+      "pk": 1, 
+      "model": "spider.siteinfo", 
+      "fields": {
+         "url": "http://www.sadistic.pl/", 
+         "name": "sadistic", 
+         "last_item_counter": 0, 
+         "last_list_counter": 0
+      }
+   }, 
+   {
+      "pk": 2, 
+      "model": "spider.siteinfo", 
+      "fields": {
+         "url": "http://www.kwejk.pl/", 
+         "name": "kwejk", 
+         "last_item_counter": 0, 
+         "last_list_counter": 0
+      }
+   },
+   {
+      "pk": 3, 
+      "model": "spider.siteinfo", 
+      "fields": {
+         "url": "http://jebzdzidy.pl/", 
+         "name": "jebzdzidy", 
+         "last_item_counter": 1, 
+         "last_list_counter": 1
+      }
+   },
+      {
+      "pk": 4, 
+      "model": "spider.siteinfo", 
+      "fields": {
+         "url": "http://kecy.roumen.cz/", 
+         "name": "kecyroumen", 
+         "last_item_counter": 1, 
+         "last_list_counter": 1
+      }
+   }
+]

@@ -1,0 +1,43 @@
+{%extends "registration/base.html"%}
+{%load i18n%}
+
+{% block page_title %}{%trans "Login"%}{% endblock %}
+{% block form_title %}{%trans "Login"%}{%endblock%}
+{% block form_content %}
+<FORM name="loginForm" method="POST" action="">
+    {% csrf_token %}
+    <TABLE>
+    {% if form.errors %}
+    <TR>
+        <TD colspan="2">
+            <P class="error">{%trans "The user name and the password don't match or you don't have an account yet"%}.</P>
+        </TD>
+    </TR>
+    {% endif %}
+    <TR>
+        <TD>{{ form.username.label_tag }}</TD>
+        <TD>{{ form.username }}</TD>
+        <TD class="form-info">{%trans "If you don't have your User Account yet, click here"%}:</TD>
+    </TR>
+    <TR>
+        <TD>{{ form.password.label_tag }}</TD>
+        <TD>{{ form.password }}</TD>
+        <TD class="visible-content">
+            <A class="button" href="{%url registration_register%}"><IMG src="{{ STATIC_URL }}media/register.png">{%trans "Register"%}</A>        
+        </TD>
+    </TR>   
+    <TR>
+        <TD>&nbsp;</TD>
+        <TD class="visible-content">
+            <A class="button" href="javascript:document.loginForm.submit();"><IMG src="{{ STATIC_URL }}media/login.png"/>{%trans "Login"%}</A>
+        </TD>
+    </TR>
+    <TR>
+        <TD colspan="2" style="text-align:center;">
+            <BR/><BR/><A class="highlight" href="{%url auth_password_reset%}"><IMG src="{{ STATIC_URL }}media/exclam.png">&nbsp;{%trans "Click me, if you have forgotten your password."%}</A>
+        </TD>
+    </TR>
+    </TABLE>
+    <INPUT type="hidden" name="next" value="{% if next%}{{next}}{%else%}{%url index%}{%endif%}" />
+</FORM>
+{%endblock%}

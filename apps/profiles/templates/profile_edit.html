@@ -1,0 +1,79 @@
+{% extends "registration/base.html" %}
+{%load i18n humanize%}
+{% block page_title %}{%trans "My profile"%}{% endblock %}
+{%block form_title%}{%trans "Edit your profile"%}{%endblock%}
+{%block form_details%}
+{%trans "Here you can change your data and manage your account."%}<BR/>
+<BR/>{%trans "Ranking"%}:&nbsp;#{{user.rank}}
+<BR/>{%trans "You have joined us"%}:&nbsp;{{user.joined_time|naturalday}}.
+<BR/>{%trans "The last actualization of the profile"%}:&nbsp;{{user.modified_time|naturalday}}.
+<BR/>{%with stats=user.get_publications_stats%}
+{%blocktrans with total=stats.total%}Till now, you have added {{total}} yoyas from which{%endblocktrans%}:
+<UL>
+    <LI><SPAN class="highlight">{{stats.accepted}}</SPAN>&nbsp;{%trans "were accepted"%},</LI>
+    <LI><SPAN class="highlight">{{stats.front_page}}</SPAN>&nbsp;{%trans "were published"%},</LI>
+    <LI><SPAN class="highlight">{{stats.waiting}}</SPAN>&nbsp;{%trans "are waiting for to be accepted"%},</LI>
+    <LI><SPAN class="highlight">{{stats.rejected}}</SPAN>&nbsp;{%trans "were rejected"%},</LI>
+    <LI><SPAN class="highlight">{{stats.deleted}}</SPAN>&nbsp;{%trans "were removed"%}.</LI>
+</UL>
+{%endwith%}
+{%endblock%}
+
+{%block extra_js_ready%}
+{{block.super}}
+$( "#id_birth_date" ).datepicker({ dateFormat: 'dd/mm/yy' });
+{%endblock%}
+
+{% block form_content %}
+<FORM name="profileForm" method="POST" action="{%url profile_edit%}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <TABLE>
+    {% if form.errors %}
+    <TR>
+        <TD colspan="2">
+            <P class="error">{%trans "The following data isn't correct"%}:</P>
+        </TD>
+    </TR>
+    {% endif %}
+    <TR>
+        <TD>{{ form.gender.label_tag }}</TD>
+        <TD>{% if form.gender.errors %}<P class="errorlist">{{ form.gender.errors.as_text }}</P>{%endif%}
+            {{ form.gender }}
+        </TD>
+        {%if user.picture%}
+        <TD rowspan="4">
+            <IMG class="userpicture" src="{{MEDIA_URL}}{{user.picture}}"/>
+        </TD>
+        {%endif%}
+    </TR>
+    <TR>
+        <TD>{{ form.birth_date.label_tag }}</TD>
+        <TD>{% if form.birth_date.errors %}<P class="errorlist">{{ form.birth_date.errors.as_text }}</P>{%endif%}
+            {{ form.birth_date }}
+        </TD>
+    </TR>
+    <TR>
+        <TD>{{ form.language.label_tag }}</TD>
+        <TD>{% if form.language.errors %}<P class="errorlist">{{ form.language.errors.as_text }}</P>{%endif%}
+            {{ form.language }}
+        </TD>
+    </TR>
+    <TR>
+        <TD>{{ form.picture.label_tag }}</TD>
+        <TD>{% if form.picture.errors %}<P class="errorlist">{{ form.picture.errors.as_text }}</P>{%endif%}
+            {{ form.picture }}
+        </TD>
+    </TR>
+    <TR>
+        <TD>&nbsp;</TD>
+        <TD class="visible-content">
+            <INPUT class="button" type="submit" value="{%trans "Save"%}"/>
+        </TD>
+    </TR>             
+    </TABLE>
+</FORM>
+<DIV class="details">
+    {%trans "Account management"%}:<BR/><BR/>
+    <A href="{%url auth_password_change%}" class="button">{%trans "Change the password"%}</A>&nbsp;<A href="javascript:alert('{%trans "It's not possible yet."%}')" class="button">{%trans "Delete your account"%}</A>
+</DIV>
+{% endblock %}

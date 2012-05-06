@@ -1,0 +1,40 @@
+{% extends "registration/base.html" %}
+{%load i18n humanize%}
+{% block page_title %}{%trans "Profile of"%}&nbsp;{{user.user.username}}{% endblock %}
+{%block form_title%}{{user.user.username}}{%endblock%}
+
+{% block form_content %}
+
+<TABLE>
+<TR>
+    <TD><P class="label">{%trans "Name"%}</P></TD>
+    <TD><A href="{%url profile_show user.user.id%}" style="font-size:1.5em;" class="username">{{user.user.username}}</A>
+    </TD>
+    {%if user.picture%}
+    <TD rowspan="4">
+        <IMG class="userpicture" src="{{MEDIA_URL}}{{user.picture}}"/>
+    </TD>
+    {%endif%}
+</TR>
+<TR>
+    <TD><P class="label">{%trans "Statistics"%}</P></TD>
+    <TD>{%trans "Joined us"%}:&nbsp;{{user.joined_time|naturalday}}.
+        <BR/>{%trans "Last actualization of the profile"%}:&nbsp;{{user.modified_time|naturalday}}.
+        <BR/>{%with stats=user.get_publications_stats%}
+        {%blocktrans with total=stats.total%}Till now, you have added {{total}} yoyas from which{%endblocktrans%}:
+        <UL>
+            <LI><SPAN class="highlight">{{stats.accepted}}</SPAN>&nbsp;{%trans "were accepted"%},</LI>
+            <LI><SPAN class="highlight">{{stats.front_page}}</SPAN>&nbsp;{%trans "were published"%},</LI>
+            <LI><SPAN class="highlight">{{stats.waiting}}</SPAN>&nbsp;{%trans "are waiting for to be accepted"%},</LI>
+            <LI><SPAN class="highlight">{{stats.rejected}}</SPAN>&nbsp;{%trans "were rejected"%},</LI>
+            <LI><SPAN class="highlight">{{stats.deleted}}</SPAN>&nbsp;{%trans "were removed"%}.</LI>
+        </UL>
+        {%endwith%}
+    </TD>
+</TR>
+<TR>
+    <TD><P class="label">{%trans "Ranking"%}:</P></TD>
+    <TD>#{{user.rank}}</TD>
+</TR>       
+</TABLE>
+{% endblock %}

@@ -1,0 +1,966 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-06 22:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: settings_common.py:118
+msgid "Spanish"
+msgstr "Español"
+
+#: settings_common.py:119
+msgid "English"
+msgstr "Inglés"
+
+#: settings_common.py:120
+msgid "Polish"
+msgstr "Polaco"
+
+#: apps/invite_friend/forms.py:6
+msgid "Friend's e-mail"
+msgstr "E-mail del amig@"
+
+#: apps/invite_friend/forms.py:7
+msgid "Friend's name"
+msgstr "Nombre del amig@"
+
+#: apps/invite_friend/forms.py:9
+msgid "Your name"
+msgstr "Tu nombre"
+
+#: apps/invite_friend/views.py:31
+msgid "Your friend was invited, thanks!"
+msgstr "Tu amigo ha sido invitado, gracias!"
+
+#: apps/invite_friend/templates/invite_friend/invite.html:2
+msgid "Tell your friend about this place!"
+msgstr "Dile a tus amigos sobre este sitio!"
+
+#: apps/invite_friend/templates/invite_friend/invite.html:24
+#: apps/sitemanager/templates/contact.html:53
+msgid "Send"
+msgstr "Enviar"
+
+#: apps/profiles/models.py:17
+msgid "Male"
+msgstr "Varón"
+
+#: apps/profiles/models.py:18
+msgid "Female"
+msgstr "Mujer"
+
+#: apps/profiles/models.py:19
+msgid "Undefined"
+msgstr "No definido"
+
+#: apps/profiles/models.py:23
+msgid "Active"
+msgstr "Activo"
+
+#: apps/profiles/models.py:24 apps/publications/models.py:25
+msgid "Deleted"
+msgstr "Suprimido"
+
+#: apps/profiles/models.py:25
+msgid "Banned"
+msgstr "Bloqueado"
+
+#: apps/profiles/models.py:34
+msgid "System user"
+msgstr "Usuario del sistema"
+
+#: apps/profiles/models.py:36
+msgid "Modification date"
+msgstr "la fecha de modificación"
+
+#: apps/profiles/models.py:41
+msgid "Gender"
+msgstr "Sexo"
+
+#: apps/profiles/models.py:45
+msgid "New profile picture"
+msgstr "Nueva imagen del perfil"
+
+#: apps/profiles/models.py:49
+msgid "Date of Birth"
+msgstr "Fecha de nacimiento"
+
+#: apps/profiles/models.py:54
+msgid "User Status"
+msgstr "Estado del usuario"
+
+#: apps/profiles/models.py:59 apps/publications/models.py:60
+msgid "Language"
+msgstr "El idioma"
+
+#: apps/profiles/templates/profile.html:3
+msgid "Profile of"
+msgstr "El perfil de"
+
+#: apps/profiles/templates/profile.html:10 apps/publications/models.py:49
+msgid "Name"
+msgstr "Nombre"
+
+#: apps/profiles/templates/profile.html:20
+msgid "Statistics"
+msgstr "Statisticas"
+
+#: apps/profiles/templates/profile.html:21
+msgid "Joined us"
+msgstr "Ha registrado"
+
+#: apps/profiles/templates/profile.html:22
+msgid "Last actualization of the profile"
+msgstr "Ultima actualización del perfil"
+
+#: apps/profiles/templates/profile.html:24
+#: apps/profiles/templates/profile_edit.html:11
+#, python-format
+msgid "Till now, you have added %(total)s yoyas from which"
+msgstr "Todavía has añadido %(total)s yoyas de quales"
+
+#: apps/profiles/templates/profile.html:26
+#: apps/profiles/templates/profile_edit.html:13
+msgid "were accepted"
+msgstr "han sido acceptados"
+
+#: apps/profiles/templates/profile.html:27
+#: apps/profiles/templates/profile_edit.html:14
+msgid "were published"
+msgstr "han sido publicadas"
+
+#: apps/profiles/templates/profile.html:28
+#: apps/profiles/templates/profile_edit.html:15
+msgid "are waiting for to be accepted"
+msgstr "estan pendientes"
+
+#: apps/profiles/templates/profile.html:29
+#: apps/profiles/templates/profile_edit.html:16
+msgid "were rejected"
+msgstr "han sido rechazadas"
+
+#: apps/profiles/templates/profile.html:30
+#: apps/profiles/templates/profile_edit.html:17
+msgid "were removed"
+msgstr "han sido suprimidas"
+
+#: apps/profiles/templates/profile.html:36
+#: apps/profiles/templates/profile_edit.html:7
+msgid "Ranking"
+msgstr "El ranking"
+
+#: apps/profiles/templates/profile_edit.html:3
+msgid "My profile"
+msgstr "Mi perfil"
+
+#: apps/profiles/templates/profile_edit.html:4
+msgid "Edit your profile"
+msgstr "Editar tu perfil"
+
+#: apps/profiles/templates/profile_edit.html:6
+msgid "Here you can change your data and manage your account."
+msgstr "Aquí puedes cambiar tus datos y gestionar tu cuenta."
+
+#: apps/profiles/templates/profile_edit.html:8
+msgid "You have joined us"
+msgstr "Has registrado en"
+
+#: apps/profiles/templates/profile_edit.html:9
+msgid "The last actualization of the profile"
+msgstr "Ultima actualización del perfil"
+
+#: apps/profiles/templates/profile_edit.html:34
+#: apps/profiles/templates/registration/registration_form.html:14
+msgid "The following data isn't correct"
+msgstr "Los siguentes datos no son correctos"
+
+#: apps/profiles/templates/profile_edit.html:70
+msgid "Save"
+msgstr "Guardar"
+
+#: apps/profiles/templates/profile_edit.html:76
+msgid "Account management"
+msgstr "Gestión de la cuenta"
+
+#: apps/profiles/templates/profile_edit.html:77
+msgid "Change the password"
+msgstr "Cambiar la contraseña"
+
+#: apps/profiles/templates/profile_edit.html:77
+msgid "It's not possible yet."
+msgstr "Todavía no es posible."
+
+#: apps/profiles/templates/profile_edit.html:77
+msgid "Delete your account"
+msgstr "Borrar tu cuenta"
+
+#: apps/profiles/templates/registration/activate.html:3
+msgid "Account activation"
+msgstr "Activación de la cuenta"
+
+#: apps/profiles/templates/registration/activate.html:7
+msgid "Yeap! Your account has been successfully created."
+msgstr "Eepa! Tu cuenta ha sido creada con éxito."
+
+#: apps/profiles/templates/registration/activate.html:9
+msgid "Ehh... We couldn't create your account:("
+msgstr "Ayy... no pudimos crear tu cuenta:("
+
+#: apps/profiles/templates/registration/activate.html:15
+msgid ""
+"Thank you for registering. Now you can start a new session by pressing this "
+"button"
+msgstr ""
+"Gracias por registrarte. Ahora puedes iniciar la sesión pulsando éste botón."
+
+#: apps/profiles/templates/registration/activate.html:16
+#: apps/profiles/templates/registration/login.html:4
+#: apps/profiles/templates/registration/login.html:5
+#: apps/profiles/templates/registration/login.html:32
+#: apps/profiles/templates/registration/password_reset_complete.html:7
+#: apps/sitemanager/templates/base.html:165
+msgid "Login"
+msgstr "Entrar"
+
+#: apps/profiles/templates/registration/activate.html:18
+#, python-format
+msgid ""
+"\n"
+"    We are sorry, but it doesn't work. It's possible that your activation "
+"link is incorrect or out of date. The activation keys are valid only for "
+"%(days)s after the registration.\n"
+"    "
+msgstr ""
+"\n"
+"Lo sentimos, pero no funciona. Puede ser que tu enlace de activación es "
+"incorrecto, o la clave de activación de tu cuenta ha caducado. Las claves de "
+"activación son válidos únicamente para %(days)s días después de la "
+"registración."
+
+#: apps/profiles/templates/registration/activation_complete.html:19
+msgid "Activation completed"
+msgstr "Activación completa"
+
+#: apps/profiles/templates/registration/activation_complete.html:21
+msgid "Well done!"
+msgstr "Perfecto!"
+
+#: apps/profiles/templates/registration/activation_complete.html:24
+msgid ""
+"Thank you for registering. The registration process has been completed. Now, "
+"you can start sharing your epic images and videos!"
+msgstr ""
+"Gracias por registrarte. El proceso de registración se ha completado. Ahora "
+"puedes empezar a compartir tus imagenes y videos epicos!"
+
+#: apps/profiles/templates/registration/activation_complete.html:25
+msgid "Passing to the profile edition in"
+msgstr "Pasando a la edición de tu perfil en"
+
+#: apps/profiles/templates/registration/activation_email.txt:2
+msgid ""
+"Someone, hopefully you, signed up for a new account at YoYa (http://yoya.es) "
+"using this email address. If it was you, and you'd like to activate and use "
+"your account, click the link below or copy and paste it into your web "
+"browser's address bar:"
+msgstr ""
+"Alguien, esperamos que Tu, intenta crear una nueva cuenta en Yoya (http://"
+"www.yoya.es) utilizando la siguiente dirección e-mail. Si eres tú, y te "
+"gustaría activar y usar su cuenta, haga clic en el enlace abajo o copie y "
+"peguelo en la barra de direcciones de su navegador web:"
+
+#: apps/profiles/templates/registration/activation_email.txt:6
+#, python-format
+msgid ""
+"\n"
+"If you didn't request this, you don't need to do anything - you won't "
+"receive any more email from us, and the account will expire automatically in "
+"%(days)s days.\n"
+"\n"
+"\n"
+"Thank you,\n"
+"The team of yoya.es\n"
+msgstr ""
+"\n"
+"Si no has solicitado nueva cuenta, no necesitas hacer nada - no vamos a "
+"enviarte más e-mails de nosotros, y la cuenta caducará automáticamente en "
+"%(days)s días.\n"
+"\n"
+"Gracias,\n"
+"El equipo de yoya.es\n"
+
+#: apps/profiles/templates/registration/activation_email_subject.txt:2
+msgid "YoYa Account Activation"
+msgstr "Activación de cuenta en YoYa"
+
+#: apps/profiles/templates/registration/login.html:13
+msgid ""
+"The user name and the password don't match or you don't have an account yet"
+msgstr ""
+"El nombre de usuario y la contraseña no coinciden o tienes una cuenta aún"
+
+#: apps/profiles/templates/registration/login.html:20
+msgid "If you don't have your User Account yet, click here"
+msgstr "Si todavia no tienes Cuenta de Usuario click aquí"
+
+#: apps/profiles/templates/registration/login.html:26
+#: apps/profiles/templates/registration/registration_form.html:3
+#: apps/profiles/templates/registration/registration_form.html:54
+#: apps/sitemanager/templates/base.html:166
+msgid "Register"
+msgstr "Registrar"
+
+#: apps/profiles/templates/registration/login.html:37
+msgid "Click me, if you have forgotten your password."
+msgstr "Pinchame, si has olvidado tu contraseña."
+
+#: apps/profiles/templates/registration/logout.html:18
+#: apps/profiles/templates/registration/logout.html:19
+#: apps/sitemanager/templates/base.html:163
+msgid "Logout"
+msgstr "Salir"
+
+#: apps/profiles/templates/registration/logout.html:21
+#: apps/sitemanager/templates/contact.html:37
+msgid "Going back to the main page in"
+msgstr "Volviendo a la portada en"
+
+#: apps/profiles/templates/registration/password_change_done.html:4
+#: apps/profiles/templates/registration/password_change_form.html:4
+#: apps/profiles/templates/registration/password_change_form.html:5
+msgid "Password change"
+msgstr "Cambiar la contraseña"
+
+#: apps/profiles/templates/registration/password_change_done.html:5
+msgid "Password change successful"
+msgstr "la contraseña ha sido cambiado satisfactoriamente"
+
+#: apps/profiles/templates/registration/password_change_done.html:7
+msgid "Your password was changed."
+msgstr "Tu contraseña ha sido cambiado."
+
+#: apps/profiles/templates/registration/password_change_done.html:8
+msgid "Click"
+msgstr "Haga click"
+
+#: apps/profiles/templates/registration/password_change_done.html:8
+msgid "HERE"
+msgstr "AQUÍ"
+
+#: apps/profiles/templates/registration/password_change_done.html:8
+msgid "to go back to your settings edition."
+msgstr "para volver a la edición de los datos."
+
+#: apps/profiles/templates/registration/password_change_form.html:6
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"Por favor proporcione su contraseña actual, por su seguridad, y entonces "
+"defina la nueva contraseña dos veces, para verificar que fue escrita "
+"correctamente."
+
+#: apps/profiles/templates/registration/password_change_form.html:15
+#: apps/profiles/templates/registration/password_reset_confirm.html:26
+#: apps/profiles/templates/registration/password_reset_form.html:16
+msgid "Please correct the error below"
+msgstr "Por favor corrija el siguiente error"
+
+#: apps/profiles/templates/registration/password_change_form.html:40
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: apps/profiles/templates/registration/password_reset_complete.html:4
+#: apps/profiles/templates/registration/password_reset_confirm.html:4
+#: apps/profiles/templates/registration/password_reset_done.html:4
+#: apps/profiles/templates/registration/password_reset_form.html:4
+#: apps/profiles/templates/registration/password_reset_form.html:5
+msgid "Password reset"
+msgstr "Restablecer contraseña"
+
+#: apps/profiles/templates/registration/password_reset_complete.html:5
+msgid "Password reset complete"
+msgstr "Reajuste de la contraseña completado."
+
+#: apps/profiles/templates/registration/password_reset_complete.html:6
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Su contraseña ha sido enviada. Puede continuar e iniciar sesión ahora."
+
+#: apps/profiles/templates/registration/password_reset_confirm.html:7
+msgid "Enter new password"
+msgstr "Introduzca una nueva contraseña"
+
+#: apps/profiles/templates/registration/password_reset_confirm.html:7
+msgid "Password reset failed"
+msgstr "El reajuste de la contraseña falló"
+
+#: apps/profiles/templates/registration/password_reset_confirm.html:12
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Por favor, introduzca su nueva contraseña dos veces de manera que podamos "
+"verificar que la ha tecleado correctamente."
+
+#: apps/profiles/templates/registration/password_reset_confirm.html:14
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"El enlace de restablecimiento de contraseña no es válida, posiblemente "
+"debido a que ya se ha utilizado. Por favor, solicitar un restablecimiento "
+"de  la contraseña nueva."
+
+#: apps/profiles/templates/registration/password_reset_confirm.html:45
+msgid "Change my password"
+msgstr "Cambiar mi contraseña"
+
+#: apps/profiles/templates/registration/password_reset_done.html:5
+msgid "Password reset successful"
+msgstr "La contraseña reajustada satisfactoriamente"
+
+#: apps/profiles/templates/registration/password_reset_done.html:7
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+"Se han enviado las instrucciones al correo electrónico para establecer una "
+"nueva contraseña. Usted deberá recibirlo en breve."
+
+#: apps/profiles/templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+"Has recibido este correo por haber solicitado el reajuste de contraseña"
+
+#: apps/profiles/templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr "para su cuenta de usuario en %(site_name)s"
+
+#: apps/profiles/templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr "Por favor vaya a la siguiente página y escoja una nueva contraseña:"
+
+#: apps/profiles/templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr "Su nombre de usuario es:"
+
+#: apps/profiles/templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr "¡Gracias por usar nuestro servicio!"
+
+#: apps/profiles/templates/registration/password_reset_form.html:6
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
+msgstr ""
+"¿Olvidó su contraseña? Proporcione a continuación su correo electrónico, y "
+"le será enviado un mensaje con instrucciones para recuperar su cuenta."
+
+#: apps/profiles/templates/registration/password_reset_form.html:29
+msgid "Reset my password"
+msgstr "Restablecer mi contraseña"
+
+#: apps/profiles/templates/registration/registration_complete.html:3
+msgid "Registration completed"
+msgstr "Registro Completo"
+
+#: apps/profiles/templates/registration/registration_complete.html:5
+msgid "Check your e-mail"
+msgstr "Por favor revise tu correo"
+
+#: apps/profiles/templates/registration/registration_complete.html:8
+msgid ""
+"Thank you for registering. The registration link has been sent to the given "
+"e-mail address with the instructions how to activate your account."
+msgstr ""
+"Gracias por registrarte. El enlace de activación ha sido enviado a la "
+"dirección de correo indicada, junto con instrucciones para activar tu cuenta."
+
+#: apps/profiles/templates/registration/registration_form.html:5
+msgid "Create a new account"
+msgstr "Crear nueva cuenta"
+
+#: apps/profiles/templates/registration/registration_form.html:25
+msgid ""
+"\n"
+"Fill out the form to the left (all fields are required), and your account "
+"will be created; you'll be sent an email with instructions on how to finish "
+"your registration.\n"
+"\n"
+"We hate spam as much as you do, so we'll only use your email to send you "
+"signup instructions.\n"
+msgstr ""
+"\n"
+"Llena el formulario a la izquierda (todos los campos son obligatorios) y su "
+"cuenta será creada. Después te enviaremos un e-mail con instrucciones sobre "
+"cómo terminar tu registración.\n"
+"\n"
+"Odiamos el spam tanto como tu, entonces sólo vamos a utilizar el correo "
+"electrónico para enviar las instrucciones de registración.\n"
+
+#: apps/profiles/templates/registration/registration_form.html:40
+msgid "Password"
+msgstr "La contraseña"
+
+#: apps/profiles/templates/registration/registration_form.html:46
+msgid "Verify password"
+msgstr "Verificar la contraseña"
+
+#: apps/publications/forms.py:10 apps/spider/forms.py:10
+msgid "URL"
+msgstr "URL"
+
+#: apps/publications/forms.py:11 apps/publications/models.py:115
+msgid "Image"
+msgstr "Imagen"
+
+#: apps/publications/forms.py:23
+msgid ""
+"Did you forget to select the file to upload or to introduce a video URL?"
+msgstr "¿Has olvidado subir el archivo o indicar la dirección del video?"
+
+#: apps/publications/models.py:19
+msgid "Every language"
+msgstr "Todos los idiomas"
+
+#: apps/publications/models.py:22
+msgid "Pending for Acceptance"
+msgstr "Esperando para Acceptar"
+
+#: apps/publications/models.py:23
+msgid "Accepted"
+msgstr "Acceptado"
+
+#: apps/publications/models.py:24
+msgid "Rejected"
+msgstr "Rechazado"
+
+#: apps/publications/models.py:26
+msgid "Published on the Front Page"
+msgstr "Publicado en la Portada"
+
+#: apps/publications/models.py:31
+msgid "Author"
+msgstr "Autor"
+
+#: apps/publications/models.py:36
+msgid "Status"
+msgstr "Estado"
+
+#: apps/publications/models.py:38 apps/spider/models.py:23
+msgid "Time added"
+msgstr "Añadido en"
+
+#: apps/publications/models.py:42
+msgid "Time accepted"
+msgstr "Aceptado en"
+
+#: apps/publications/models.py:46
+msgid "Time published"
+msgstr "Publicado en"
+
+#: apps/publications/models.py:52 apps/sitemanager/templates/index.html:151
+#: apps/sitemanager/templates/index.html:194
+msgid "Source"
+msgstr "Fuente"
+
+#: apps/publications/models.py:55
+msgid "Description"
+msgstr "Descripción"
+
+#: apps/publications/models.py:122 apps/spider/models.py:12
+#: apps/spider/models.py:24
+msgid "Address URL"
+msgstr "Dirección URL"
+
+#: apps/publications/templates/publications/add.html:3
+msgid "Share something epic"
+msgstr "Compartir algo épico"
+
+#: apps/publications/templates/publications/add.html:46
+msgid "Uploading a new publication"
+msgstr "Envío de una publicación nueva"
+
+#: apps/publications/templates/publications/add.html:48
+#, python-format
+msgid ""
+"We are sorry, but we allow sending only up to %(number)s publications per "
+"day. Please wait until midnight."
+msgstr ""
+"Lo sientamos, pero se puede subir cómo máximo %(number)s publicaciones al "
+"día. Espara hasta medianoche."
+
+#: apps/publications/templates/publications/add.html:51
+msgid ""
+"Thank you, your publication is being processed. After the succesful "
+"acceptance, it is visible in the 'Waiting' section."
+msgstr ""
+"Gracias, tu publicación esta en proceso. Una vez que se acepte pasará a la "
+"sección de 'Pendientes'."
+
+#: apps/publications/templates/publications/add.html:103
+#: apps/sitemanager/templates/base.html:182
+msgid "Upload"
+msgstr "Subir"
+
+#: apps/sitemanager/models.py:6
+msgid "Contact message"
+msgstr "Mensaje de contacto"
+
+#: apps/sitemanager/models.py:7
+msgid "Advertisement Request"
+msgstr "Petición de Publicidad"
+
+#: apps/sitemanager/models.py:14
+msgid "Name and surname or the company name"
+msgstr "Nombre y apellidos o el nombre de la empresa"
+
+#: apps/sitemanager/models.py:18
+msgid "E-mail address"
+msgstr "Dirrección de e-mail"
+
+#: apps/sitemanager/models.py:21
+msgid "Telephone number"
+msgstr "El número del telefono"
+
+#: apps/sitemanager/models.py:24
+msgid "Message"
+msgstr "Mensaje"
+
+#: apps/sitemanager/models.py:26
+msgid "Time sent"
+msgstr "Enviado en"
+
+#: apps/sitemanager/models.py:31
+msgid "Type"
+msgstr "Tipo"
+
+#: apps/sitemanager/templates/404.html:3
+msgid "404 | Web page doesn't exist"
+msgstr "404 | La pagina no existe"
+
+#: apps/sitemanager/templates/404.html:4
+msgid "Ups, we are confused..."
+msgstr "Ups, estamos confundidos...."
+
+#: apps/sitemanager/templates/404.html:6
+msgid "It looks like the Web page you're looking for:"
+msgstr "Parece que la pagina que estas buscando:"
+
+#: apps/sitemanager/templates/404.html:7
+msgid "doesn't exist."
+msgstr "no existe."
+
+#: apps/sitemanager/templates/500.html:3
+msgid "Error"
+msgstr "Error"
+
+#: apps/sitemanager/templates/500.html:4
+msgid "WTF is going on here?!"
+msgstr "E, ke pasa koño?!"
+
+#: apps/sitemanager/templates/500.html:6
+msgid "Server error. It looks that we have a small problem..."
+msgstr "Error del servidor. Parece que tenemos un problema pequeño..."
+
+#: apps/sitemanager/templates/base.html:6
+#: apps/sitemanager/templates/base.html:7
+msgid "Yoya.es - The best images from the Internet"
+msgstr "Yoya.es - Las mejores imagenes del internet"
+
+#: apps/sitemanager/templates/base.html:9
+#: apps/sitemanager/templates/base.html:12
+msgid "The best images from the Internet"
+msgstr "Las mejores imagenes del internet"
+
+#: apps/sitemanager/templates/base.html:63
+msgid "Do you like YoYa?"
+msgstr "A ti te gusta YoYa?"
+
+#: apps/sitemanager/templates/base.html:63
+msgid ""
+"Tell your friends about it! Share something on Facebook, Tuenti or Twitter."
+msgstr "Dile a tus amigos! Comparte yoyas en Facebook, Tuenti o en Twitter."
+
+#: apps/sitemanager/templates/base.html:63
+msgid "Follow"
+msgstr "Seguir"
+
+#: apps/sitemanager/templates/base.html:65
+msgid "Hi! Nice that you dropped in here."
+msgstr "Buenas!"
+
+#: apps/sitemanager/templates/base.html:65
+msgid "So far our community have published"
+msgstr "Por ahora nuestra Comunidad ha publicado"
+
+#: apps/sitemanager/templates/base.html:65
+msgid "...in the Waiting section"
+msgstr "...en Pendientes"
+
+#: apps/sitemanager/templates/base.html:65
+msgid "...on the Main Page"
+msgstr "...en la Portada"
+
+#: apps/sitemanager/templates/base.html:71
+msgid "new yoyas added"
+msgstr "nuevas yoyas añadidas!"
+
+#: apps/sitemanager/templates/base.html:171
+msgid "Tell your friend"
+msgstr "Dile a tu amig@!"
+
+#: apps/sitemanager/templates/base.html:171
+msgid "Hey"
+msgstr "Ey"
+
+#: apps/sitemanager/templates/base.html:178
+#: apps/sitemanager/templates/base.html:202
+msgid "Main"
+msgstr "Portada"
+
+#: apps/sitemanager/templates/base.html:180
+msgid "Random"
+msgstr "Aleatorio"
+
+#: apps/sitemanager/templates/base.html:181
+#: apps/sitemanager/templates/base.html:204
+msgid "Top"
+msgstr "Top"
+
+#: apps/sitemanager/templates/base.html:182
+msgid "new"
+msgstr "nuevo"
+
+#: apps/sitemanager/templates/base.html:184
+msgid "Moderate"
+msgstr "Moderar"
+
+#: apps/sitemanager/templates/base.html:185
+#: apps/spider/templates/spider/list_candidates.html:6
+#: apps/spider/templates/spider/list_sites.html:3
+msgid "Spider"
+msgstr "Araña"
+
+#: apps/sitemanager/templates/base.html:199
+msgid ""
+"Woaah! it looks like you have seen all the yoyas that we have published in "
+"this seciton so far. Just click below - there are still many yoyas that you "
+"haven't seen yet:"
+msgstr ""
+"¡Olo! Parece que has visto todas las yoyas que hemos publicado en esta "
+"sección hasta ahora. Sólo pincha abajo - hay todavía muchas yoyas que no has "
+"visto:"
+
+#: apps/sitemanager/templates/base.html:247
+msgid ""
+"If you want to be up-to-date with the latest yoyas, just click the \"Like\" "
+"button on our FB page:"
+msgstr ""
+"Si quieres estar al tanto con las últimas yoyas, haga clic en el botón \"Me "
+"Gusta\" en nuestra página de FB:"
+
+#: apps/sitemanager/templates/base.html:260
+#: apps/sitemanager/templates/contact.html:26
+msgid "Contact"
+msgstr "Contacto"
+
+#: apps/sitemanager/templates/base.html:261
+msgid "Advertise here"
+msgstr "Anuncia Aqui"
+
+#: apps/sitemanager/templates/base.html:262
+#: apps/sitemanager/templates/faq.html:3
+msgid "FAQ"
+msgstr "FAQ"
+
+#: apps/sitemanager/templates/base.html:263
+#: apps/sitemanager/templates/disclaimer.html:3
+msgid "Disclaimer"
+msgstr "Renuncia"
+
+#: apps/sitemanager/templates/base.html:264
+#: apps/sitemanager/templates/regulations.html:3
+#: apps/sitemanager/templates/regulations.html:4
+msgid "Regulations"
+msgstr "Regulaciones"
+
+#: apps/sitemanager/templates/base.html:268
+#: apps/sitemanager/templates/disclaimer.html:6
+msgid ""
+"All content is user-generated. It is the sole responsibility of the "
+"publications' authors - the site owner do not take any responsibility for "
+"the published content."
+msgstr ""
+"Todo el contenido es generado por los usuarios. Es de la exclusiva "
+"responsabilidad de los autores de las publicaciones - el propietario de la "
+"pagina no tiene ninguna responsabilidad por el contenido publicado."
+
+#: apps/sitemanager/templates/base.html:269
+msgid "RSS Feed"
+msgstr "Fuente RSS"
+
+#: apps/sitemanager/templates/base.html:275
+msgid ""
+"yoya.es - key words that describe the site content. For us entertainment are "
+"emoticons, emotions, games, films, movies, images, pictures, free movies, "
+"web pictures, funy movies, cats, online games, jokes, stories, domotivators, "
+"fotos, fotos and pictures, funny photos, funny, hilarious, entertaining."
+msgstr ""
+"yoya.es - palabras clave que describen el contenido de este sitio. Para "
+"nosotros el entretenimiento son emoticones, juegos, películas, pelís, "
+"imágenes, fotografías, fotos, películas gratis, gifs, fotos, gatos, gatitios "
+"graciosos, juegos en línea, juegos online, chistes, historias, "
+"desmotivationes, fotos, fotos e imágenes, fotos divertidas, hilarantes, "
+"bromas, entretenida."
+
+#: apps/sitemanager/templates/contact.html:25
+msgid "Advertisement"
+msgstr "Publicidad"
+
+#: apps/sitemanager/templates/contact.html:30
+msgid "Do you want to advertise on this page?"
+msgstr "¿Quieres anunciarte en esta página?"
+
+#: apps/sitemanager/templates/contact.html:31
+msgid "Contact with the author"
+msgstr "Contacte el autor"
+
+#: apps/sitemanager/templates/contact.html:36
+msgid "Thank you for your message."
+msgstr "¡Gracias por tu mensaje!"
+
+#: apps/sitemanager/templates/contact.html:40
+msgid ""
+"If you want to advertise on YoYa, this is the best form to contact us.<BR/"
+"><BR/>If you are interested in the visual advertisement on yoya.es, we "
+"recommend to use the features of <A href=\"http://google.com/ads\">Google "
+"ADS</A> - simply declare that you want to display your advertisements on our "
+"site. The complete description of the service is available on the page of <A "
+"href=\"http://google.com/ads\">Google ADS</A>."
+msgstr ""
+"Si deseas anunciarte en Yoya, esta es la mejor forma de ponerse en contacto "
+"connosotros.<BR/><BR/>Si estas interesado en el anuncio visual en yoya.es, "
+"recomendamos el uso de los servicios de <A href=\"http://google.es/ads\"> "
+"GoogleAnuncios </A> - sólo declara que deseas mostrar tus anuncios en "
+"nuestra pagina. La descripción completa del servicio está disponible en la "
+"página de <A href = \"http://google.com/ads\">Anuncios de Google</ A>."
+
+#: apps/sitemanager/templates/contact.html:42
+msgid ""
+"Do you have some comments or suggestions? Are you an author of some content "
+"published on this page and you aren't happy about it? Leave us a message "
+"here:"
+msgstr ""
+"¿Tienes algún comentario o sugerencia? ¿Eres un autor(-a) de algúna "
+"cosapublicada en esta página y lo no te gusta? Déjanos un mensaje aquí:"
+
+#: apps/sitemanager/templates/disclaimer.html:4
+msgid "Disclaimer statement"
+msgstr "Descargo de responsabilidad"
+
+#: apps/sitemanager/templates/faq.html:4
+msgid "Frequently Asked Questions"
+msgstr "Las Preguntas Presuntamente Frecuentes"
+
+#: apps/sitemanager/templates/faq.html:8
+msgid "What is YoYa? What is the idea of this page?"
+msgstr "¿Que es YoYa? ¿Cuál es la idea de esta página?"
+
+#: apps/sitemanager/templates/faq.html:9
+msgid ""
+"Are you bored at the school / university / at work? Do you want to entertain "
+"yourself? Did you take a funny photo or create an increadibely funny image "
+"that you want to share with the world? This is the place for you! Every day "
+"we select and publish new images submited by the people - you cannot miss "
+"them!"
+msgstr ""
+"¿Te aburres en la clase o en el trabajo?¿Quieres divertirte un rato?¿Has "
+"hecho una foto o un fotomontaje cómico que te gustaría enseñar al mundo? Eso "
+"es el sitio para Ti! Cada día seleccionamos y publicamos nuevas imágenes - "
+"no puedes perderlas!"
+
+#: apps/sitemanager/templates/index.html:79
+#: apps/sitemanager/templates/index.html:94
+msgid "Click here to close the advertisement"
+msgstr "Haga click para cerrar el anuncio"
+
+#: apps/sitemanager/templates/index.html:141
+#: apps/sitemanager/templates/index.html:184
+#, python-format
+msgid "Uploaded on %(time)s by"
+msgstr "Subido en %(time)s por"
+
+#: apps/sitemanager/templates/index.html:160
+msgid "Next Random Yoya?"
+msgstr "La siguente Yoya aleatoria?"
+
+#: apps/sitemanager/templates/index.html:167
+msgid "See also the other FUNtastic yoyas:"
+msgstr "Eyy, mira también otras yoyas:"
+
+#: apps/sitemanager/templates/index.html:198
+#: apps/sitemanager/templates/index.html:203
+#: apps/sitemanager/templates/index.html:206
+msgid "REJECT"
+msgstr "RECHAZAR"
+
+#: apps/sitemanager/templates/index.html:199
+#: apps/sitemanager/templates/index.html:207
+msgid "FRONT PAGE"
+msgstr "PORTADA"
+
+#: apps/sitemanager/templates/index.html:262
+msgid "it looks like there's nothing in this section."
+msgstr "parece que no hay nada en esta sección."
+
+#: apps/sitemanager/templates/mark_section.html:5
+msgid "I like it"
+msgstr "Me gusta"
+
+#: apps/sitemanager/templates/mark_section.html:7
+msgid "I don't like it, FUUUU!"
+msgstr "No me gusta, FUUUU!"
+
+#: apps/sitemanager/templates/regulations.html:6
+msgid "To be continued..."
+msgstr "..."
+
+#: apps/spider/models.py:5
+msgid "Single item"
+msgstr "elemento singular"
+
+#: apps/spider/models.py:6
+msgid "List"
+msgstr "Lista"
+
+#: apps/spider/templates/spider/candidate_content.html:15
+msgid "OK"
+msgstr "Vale"
+
+#: apps/spider/templates/spider/list_candidates.html:5
+msgid "Spider: All crawlable sites"
+msgstr "Araña: Todas las paginas"
+
+#: apps/spider/templates/spider/list_sites.html:5
+msgid "Select the site"
+msgstr "Elige la pagina"
+
+#: apps/spider/templates/spider/list_sites.html:21
+msgid "ALL POSSIBLE SITES"
+msgstr "TODAS LAS PAGINAS POSIBLES"

@@ -1,0 +1,22 @@
+{% extends "registration/base.html" %}
+{%load i18n humanize%}
+{% block page_title %}{%trans "Account activation"%}{% endblock %}
+
+{% block form_title %}
+    {% if account %}
+        {%trans "Yeap! Your account has been successfully created."%}
+    {%else%}
+        {%trans "Ehh... We couldn't create your account:("%}
+    {%endif%}
+{%endblock%}
+
+{%block form_details%}
+    {% if account %}
+        {%trans "Thank you for registering. Now you can start a new session by pressing this button"%}<BR/>
+        <A class="button" href="{%url login%}"><IMG src="{{ STATIC_URL }}media/login.png">&nbsp;{%trans "Login"%}</A>
+    {%else%}
+    {%blocktrans with days=expiration_days|apnumber%}
+    We are sorry, but it doesn't work. It's possible that your activation link is incorrect or out of date. The activation keys are valid only for {{days}} after the registration.
+    {% endblocktrans %}
+    {%endif%}
+{%endblock%}

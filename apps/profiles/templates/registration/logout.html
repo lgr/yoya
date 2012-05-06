@@ -1,0 +1,21 @@
+{%extends "registration/base.html"%}
+{%load i18n%}
+{%block extra_js_functions%}
+var cnt = 5;
+function countDown(){
+    $('.details #counter').html(cnt--);
+    if(cnt==0)
+        redirect('/');
+    else
+        setTimeout('countDown()', 1000);
+}
+{%endblock%}
+{%block extra_js_ready%}
+{{block.super}}
+countDown();
+{%endblock%}
+
+{% block page_title %}{%trans "Logout"%}{% endblock %}
+{% block form_title %}{%trans "Logout"%}{%endblock%}
+
+{%block form_details%}{%trans "Going back to the main page in"%}&nbsp;<SPAN id="counter"></SPAN>&nbsp;s...{%endblock%}

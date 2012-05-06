@@ -1,0 +1,48 @@
+{% load i18n %}
+{%if html%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+    <HEAD>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <TITLE>{{subject}}</TITLE>
+        <STYLE type="text/css">
+        *{margin:0; padding:0;}  
+        body{ margin:0; padding:0; width:100%; font-family:arial,sans-serif; font-size: 12px/18px; text-align:center; background-color:#ffffff;}
+        img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none; width: 482px; height: 207px;}
+        a{color:#85BB3C; font-size:1.1em; font-weight:bold;}
+        .main{width:600px; margin:0 auto; text-align:left;}
+        .important{font-weight:bold;}
+        .footer{width:100%; height:1px; color:##909090;}
+        </STYLE>
+    </HEAD>
+    <BODY>
+    <DIV class="main">
+    <A href="http://{{domain}}?utm_medium=mail_inv"><IMG style="margin:30px" alt="Yoya" src="http://{{domain}}/site_media/media/mail_baner.png"/></A>
+    </DIV>
+    <DIV class="main">
+    <BR/>
+{%endif%}
+{%if recipient%}Hola {{recipient}}, {%if html%}<BR/><BR/>{%endif%}{%endif%}
+
+Aquí {{sender}}. ¿Has visto este portal: {%if html%}<A href="http://{{domain}}{{site_path}}?utm_medium=mail_inv">{{domain}}{{site_path}}</A>?<BR/><BR/>{%else%}{{domain}}{{site_path}} ?{%endif%}
+
+Eso es sólo para empezar - en está pagina hay más cosas graciosas, que de la risa casi me caigo de la silla!{%if html%}<BR/><BR/>{%endif%}
+
+Y lo mejor: en {%if html%}<A href="http://{{domain}}?utm_medium=mail_inv">{{domain}}</A>{%else%}{{domain}}{%endif%} cada día seleccionan y publican nuevas imágenes divertidas - no puedes perderlas!
+
+{%if html%}
+<BR/><BR/><HR class="footer"/><BR/>
+Gracias,<BR/>
+El mensaje enviado por <A href="http://{{domain}}?utm_medium=mail_inv">{{domain}}</A><BR/><BR/><BR/>
+{%else%}
+
+
+-----------
+Gracias,
+El mensaje enviado por {{domain}}
+{%endif%}
+{%if html%}
+    </DIV>
+    </BODY>
+</HTML>
+{%endif%}

@@ -1,0 +1,265 @@
+{%extends "base.html"%}
+{%load i18n%}
+{%block extra_meta%}
+    {%if single_pub%}
+    <META property="og:image" content="http://{{site}}{{ single_pub.imagepublication.image.url}}"/>
+    <META property="og:type" content="article"/>
+    <META property="og:title" content="{{single_pub.name}}"/>
+    <META property="og:url" content="http://{{site}}{%url publication_show single_pub.id%}"/>
+    <META property="og:description" content="{{single_pub.description}}"/>
+    <META property="fb:app_id" content="{{ fb_key }}"/> 
+    {%endif%}
+{%endblock%}
+
+{%block extra_js_scripts%}
+<script type="text/javascript">
+  {%if current_language != 'en'%}window.___gcfg = {lang: '{{ current_language }}'};{%endif%}
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+{%endblock%}
+
+{%block extra_js_ready%}
+$('a.vote').click(function(e){
+    e.preventDefault();
+    var url = $(this).attr('href');
+    var elem = $(this);
+    $.get(url, function(data) {
+        if(data.login_required)
+            redirect('{%url login%}?next=' + window.location);
+        else
+            if(data.votes && data.id){
+                $('.counter#pub_' + data.id).empty().append(data.votes);
+                var img = elem.children('img');
+                var opp = elem.parent().parent().find('img').not(img);
+                opp.attr('src', opp.attr('src').replace("_on", "_off")).removeClass('is_on');
+                img.addClass('is_on').attr('src', img.attr('src').replace("_off", "_on"));
+            }
+    });
+});
+{%if request.user.get_profile.is_moderator%}
+$('.moderate a').click(function(e){
+    if ($(this).attr('target') == "_blank")
+        return true;
+    else{
+        e.preventDefault();
+        var url = $(this).attr('href');
+        $.get(url, function(data) {
+            if(data.login_required)
+                redirect('{%url login%}?next=' + window.location);
+            else if(data.id)
+                    $('.pub#' + data.id).slideUp('fast', function() {
+                        $(this).empty().remove();
+                    });
+        });
+    }
+});
+{%endif%}
+
+{%if single_pub%}
+tuenti.widget.shareButton("tuenti{{single_pub.id}}", {
+    "share-url": "http://{{site}}{%url publication_show single_pub.id%}",{%if current_language != 'es'%}"language": "en-US",{%endif%}
+    "suggested-text": "{{single_pub.name}}"
+});
+{%endif%}
+{% for pub in publications%}
+tuenti.widget.shareButton("tuenti{{pub.id}}", {
+    "share-url": "http://{{site}}{%url publication_show pub.id%}",{%if current_language != 'es'%}"language": "en-US",{%endif%}
+    "suggested-text": "{{pub.name}}"
+});
+{%endfor%}
+
+{%endblock%}
+
+{%block side_advert_left%}
+{%if not request.user.get_profile.without_adverts%}
+<DIV class="close-ad" title="{%trans "Click here to close the advertisement"%}">&nbsp;</DIV>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9259777924503621";
+/* side_box */
+google_ad_slot = "4382004811";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
+{%endif%}
+{%endblock%}
+
+{%block side_advert_right%}
+{%if not request.user.get_profile.without_adverts%}
+<DIV class="close-ad" title="{%trans "Click here to close the advertisement"%}">&nbsp;</DIV>
+    {%if current_language == 'pl' and random3 != 3%}
+        <A href="http://www.megiteam.pl/refk/yoya/"><IMG src="http://www.megiteam.pl/site_media/banery/python/banerd{{ random3 }}.jpg"  alt="Megiteam - mówimy Twoim językiem"  title="MegiTeam - mówimy Twoim językiem"></A>
+    {%else%}
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9259777924503621";
+/* right side */
+google_ad_slot = "5902536364";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    {%endif%}
+{%endif%}
+{%endblock%}
+
+{%block content%}
+{%with moderator=request.user.get_profile.is_moderator without_adverts=request.user.get_profile.without_adverts%}
+
+{%comment%}
+{%if not without_adverts%}
+<DIV class="advert">
+<DIV class="close-ad" title="{%trans "Click here to close the advertisement"%}">&nbsp;</DIV>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9259777924503621";
+/* main_header */
+google_ad_slot = "2795804118";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
+</DIV>
+{%endif%}
+{%endcomment%}
+
+{%if single_pub and single_pub.is_valid%}
+{%with single_pub as pub %}
+    <DIV class="pub rounded" id="{{pub.id}}">
+        {%include "mark_section.html"%}
+        {%if pub.name%}
+        <DIV class="title">
+            <A href="{%url publication_show_alone pub.id%}">{{pub.name}}</A>
+        </DIV>
+        {%endif%}
+        {%if pub.description%}<DIV class="details">{{pub.description}}</DIV>{%endif%}
+        <DIV class="details">{%blocktrans with time=pub.time_added|date:"d-m-Y H:i" user=pub.author%}Uploaded on {{time}} by{%endblocktrans%}&nbsp;<A href="{%url profile_show pub.author.id%}" class="username">{{pub.author}}</A>.</DIV>
+        <DIV class="item">
+            {%if pub.imagepublication%}
+            <A href="{%url publication_show_alone pub.id%}"><IMG src="{{ pub.imagepublication.image.url}}"/></A>
+            {%endif%}
+            {%if pub.urlpublication%}
+                {{pub.urlpublication.widget|safe}}
+            {%endif%}
+        </DIV>
+        <DIV class="under">
+            <DIV class="source">{%trans "Source"%}: {{pub.source}}</DIV>
+            <DIV class="share">
+                <DIV class="share-container">
+                    <DIV class="btn"><A href="http://www.tuenti.com/share" id="tuenti{{pub.id}}"></A></DIV>
+                    <DIV class="fb-like" data-href="http://{{site}}{%url publication_show pub.id%}" data-send="true" data-width="350" data-show-faces="true" data-font="verdana"></DIV>
+                    <DIV class="g-plusone" {# data-annotation="inline" data-width="250" #}data-href="http://{{site}}{%url publication_show pub.id%}"></DIV>
+                    <DIV class="clear"></DIV>
+                </DIV>
+            </DIV>
+            {%if active == "random"%}<A class="button" href="{%url publication_random%}">{%trans "Next Random Yoya?"%}</A>{%endif%}            
+            <DIV class="comments">
+                <DIV class="fb-comments" data-href="http://{{site}}{%url publication_show pub.id%}" data-num-posts="3" data-width="580"></DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+    {%if publications%}
+    <DIV class="titlelike">{%trans "See also the other FUNtastic yoyas:"%}</DIV>
+    {%endif%}
+{%endwith%}
+{%endif%}
+
+{%for pub in publications%}
+{%if pub.is_valid%}
+    <DIV class="pub rounded" id="{{pub.id}}">
+        {%if active != 'moderate'%}
+        {%include "mark_section.html"%}
+        {%endif%}
+        {%if pub.name%}
+        <DIV class="title">
+            <A href="{%url publication_show_alone pub.id%}">{{pub.name}}</A>
+        </DIV>
+        {%endif%}
+        {%if pub.description%}<DIV class="details">{{pub.description}}</DIV>{%endif%}
+        <DIV class="details">{%blocktrans with time=pub.time_added|date:"d-m-Y H:i" user=pub.author%}Uploaded on {{time}} by{%endblocktrans%}&nbsp;<A href="{%url profile_show pub.author.id%}" class="username">{{pub.author}}</A>.</DIV>
+        <DIV class="item">
+            {%if pub.imagepublication%}
+            <A href="{%url publication_show_alone pub.id%}"><IMG src="{{ pub.imagepublication.image.url}}"/></A>
+            {%endif%}
+            {%if pub.urlpublication%}
+                {{pub.urlpublication.widget|safe}}
+            {%endif%}
+        </DIV>
+        <DIV class="under">
+            <DIV class="source">{%trans "Source"%}: {{pub.source}}</DIV>
+            {%if moderator%}
+            <DIV class="moderate">
+                {%if active == 'moderate'%}
+                <A href="{%url publication_reject pub.id%}">{%trans "REJECT"%}</A>
+                <A href="{%url publication_front_page pub.id%}">{%trans "FRONT PAGE"%}</A>
+                {# <A href="{%url publication_accept pub.id%}">{%trans "ACCEPT"%}</A> #}
+                {%endif%}
+                {%if active == 'index'%}
+                <A href="{%url publication_reject pub.id%}">{%trans "REJECT"%}</A>
+                {%endif%}
+                {%if active == 'waiting_room'%}
+                <A href="{%url publication_reject pub.id%}">{%trans "REJECT"%}</A>
+                <A href="{%url publication_front_page pub.id%}">{%trans "FRONT PAGE"%}</A>
+                {%endif%}
+                <A href="{%if pub.imagepublication%}{%url admin:publications_imagepublication_change pub.id%}{%endif%}{%if pub.urlpublication%}{%url admin:publications_urlpublication_change pub.id%}{%endif%}" target="_blank" class="edit">EDIT</A>
+            </DIV>
+            {%endif%}
+            {%if forloop.counter == 2 and not without_adverts%}
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9259777924503621";
+/* under_item */
+google_ad_slot = "6895787014";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+            {%endif%}
+            <DIV class="share">
+                <DIV class="share-container">
+                    <DIV class="btn"><A href="http://www.tuenti.com/share" id="tuenti{{pub.id}}"></A></DIV>
+                    <div class="fb-like" data-href="http://{{site}}{%url publication_show pub.id%}" data-send="true" data-width="350" data-show-faces="true" data-font="verdana"></div>
+                    <DIV class="g-plusone" {# data-annotation="inline" data-width="250" #}data-href="http://{{site}}{%url publication_show pub.id%}"></DIV>
+                    <DIV class="clear"></DIV>
+                </DIV>
+            </DIV>
+            {%if forloop.counter == 5 and current_language == 'pl' and not without_adverts%}
+            <DIV class="item">
+                <A href="http://www.megiteam.pl/refk/yoya/"><IMG src="http://www.megiteam.pl/site_media/banery/python/banerm{{ random3 }}.jpg"  alt="Megiteam - mówimy Twoim językiem"  title="MegiTeam - mówimy Twoim językiem"></A>
+            </DIV>    
+            {%endif%}
+            {#<DIV class="comment">Coment (12334)</DIV>#}
+        </DIV>
+    </DIV>
+{%endif%}
+
+{%if forloop.counter == 3 and not without_adverts%}
+<DIV class="pub rounded">
+    <DIV class="item">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9259777924503621";
+/* middle_box */
+google_ad_slot = "9236345747";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
+    </DIV>
+</DIV>
+{%endif%}
+{%endfor%}
+{%endwith%}
+{%if not publications and not single_pub%}
+<DIV class="pub rounded">
+    <DIV class="title">{%trans "it looks like there's nothing in this section." %}</DIV>
+</DIV>
+{%endif%}
+{%endblock%}

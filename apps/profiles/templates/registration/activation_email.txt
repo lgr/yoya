@@ -1,0 +1,12 @@
+{% load i18n humanize %}
+{%trans "Someone, hopefully you, signed up for a new account at YoYa (http://yoya.es) using this email address. If it was you, and you'd like to activate and use your account, click the link below or copy and paste it into your web browser's address bar:"%}
+
+http://{{site}}{%url registration_activate activation_key %}
+
+{%blocktrans with days=expiration_days|apnumber%}
+If you didn't request this, you don't need to do anything - you won't receive any more email from us, and the account will expire automatically in {{ days }} days.
+
+
+Thank you,
+The team of yoya.es
+{%endblocktrans%}

@@ -1,0 +1,47 @@
+{%if pubs%}
+<textarea style="width: 100%; height: 100%">
+Imagenes para hoy!
+
+[size=18][b]No es lo mismo, ... :)[/b][/size]  :P 
+
+[align=center]{%for pub in pubs%}
+[b]{{pub.name}}[/b]
+{%if pub.imagepublication%}[url=http://yoya.es/][img=http://{{site}}{{ pub.imagepublication.image.url}}][/url]{%endif%}{%if pub.urlpublication%}[video]http://www.youtube.com/embed/{{ pub.urlpublication.youtube_id }}?wmode=transparent[/video]
+link: [url={{ pub.urlpublication.url }}]{{ pub.urlpublication.url }}[/url]{%endif%}
+{%if forloop.counter|divisibleby:6%}
+
+
+
+[size=18][url=http://yoya.es/]Mira, hay más fotos divertidas aquí: [color=red]yoya.es[/color][/url] :) [/size]
+
+
+
+{%endif%}
+{%endfor%}[/align]
+
+
+[align=center][color=red][size=24][url=http://yoya.es/]¿Te gusta este post?[/url][/size][/color]
+[color=red][size=24][url=http://yoya.es/]¿Quieres ver más cosas divertidas?[/url][/size][/color]
+
+[size=24][url=http://yoya.es/]¡Pincha aquí! [color=red]yoya.es[/color][/url][/size]
+[/align]
+
+
+
+.
+</textarea>
+{%endif%}
+{%if randoms%}
+
+?from_date=YYYYMMDDHHmm&to_date=YYYYMMDDHHmm <BR><BR><BR>
+
+<form method="POST">
+    {%csrf_token%}
+    {%for pub in randoms%}
+    <INPUT checked="checked" TYPE=CHECKBOX NAME="{{pub.id}}">
+        {%if pub.imagepublication%}<IMG src="{{ pub.imagepublication.image.url}}"/>{%endif%}
+        {%if pub.urlpublication%}{{pub.urlpublication.widget|safe}}{%endif%}</BR>
+    {%endfor%}
+    <BR/><BR/><INPUT class="button" type="submit" value="GENERATE"/>
+</form>
+{%endif%}
