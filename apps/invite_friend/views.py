@@ -38,14 +38,6 @@ def invitation(request):
                               context_instance=RequestContext(request))
 
 
-def send_random(request):
-    try:
-        send_invitation()
-        return HttpResponse("OK")
-    except:
-        return HttpResponse("FAILED")
-
-
 def create_invitation(email, name='', inviter=None, inviter_name=''):
     kwargs = {'email': email,
               'name': name}

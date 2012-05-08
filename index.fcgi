@@ -6,7 +6,7 @@ import os
 #sys.path.insert(0, "/home/username")
 
 # Switch to the directory of your project.
-os.chdir("/home/yoya/www/apps/yoya")
+os.chdir("/deployment_directory")
 
 # Set the DJANGO_SETTINGS_MODULE environment variable.
 os.environ['DJANGO_SETTINGS_MODULE'] = "yoya.settings"
