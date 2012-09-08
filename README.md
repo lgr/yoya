@@ -7,5 +7,3 @@ funny pictures, GIFs and YouTube videos. Integration with popular social network
  of the interesting content. 
 
 It is free and open source software, distributed under the GNU General Public License version 2 or later.
-
-If you want to see this application in action, visit: http://www.yoya.es
